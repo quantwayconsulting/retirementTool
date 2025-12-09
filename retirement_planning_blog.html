@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master Your Retirement: The Complete Guide to Financial Freedom | tradeControl.in</title>
+    <meta name="description"
+        content="Plan your retirement with confidence using our comprehensive retirement calculator. Calculate your financial freedom age, optimize asset allocation, and secure your future.">
+    <meta name="keywords"
+        content="retirement planning, financial freedom, retirement calculator, retirement tool, financial planning">
+
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Master Your Retirement: The Complete Guide to Financial Freedom">
+    <meta property="og:description"
+        content="Discover how to plan your retirement systematically and achieve financial freedom with confidence.">
+    <meta property="og:type" content="article">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Tiempos+Headline:wght@400;700&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { 'forest': '#1B4D3E', 'sage': '#52796F', 'charcoal': '#2D3748', 'gold': '#D4AF37', 'coral': '#E07A5F', 'cream': '#FEFEFE', 'light-sage': '#F0F4F3' },
+                    fontFamily: { 'tiempos': ['Tiempos Headline', 'serif'], 'inter': ['Inter', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --bg-primary: #FEFEFE;
+            --bg-card: #FFFFFF;
+            --bg-light-sage: #F0F4F3;
+            --text-primary: #2D3748;
+            --text-secondary: #4a5568;
+            --forest: #1B4D3E;
+            --sage: #52796F;
+        }
+
+        .dark {
+            --bg-primary: #0f172a;
+            --bg-card: #1e293b;
+            --bg-light-sage: #1e3a32;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --forest: #4ade80;
+            --sage: #86efac;
+        }
+
+        body {
+            scroll-behavior: smooth;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .dark .bg-white {
+            background-color: var(--bg-card) !important;
+        }
+
+        .dark .bg-light-sage {
+            background-color: var(--bg-light-sage) !important;
+        }
+
+        .dark .text-gray-700 {
+            color: var(--text-secondary) !important;
+        }
+
+        .dark .text-gray-600 {
+            color: var(--text-secondary) !important;
+        }
+
+        /* Comprehensive dark mode overrides */
+        .dark .text-charcoal {
+            color: var(--text-primary) !important;
+        }
+
+        .dark .text-forest {
+            color: var(--forest) !important;
+        }
+
+        .dark .text-sage {
+            color: var(--sage) !important;
+        }
+
+        .dark .text-coral {
+            color: #fb923c !important;
+        }
+
+        .dark .bg-cream {
+            background-color: var(--bg-primary) !important;
+        }
+
+        .dark h1,
+        .dark h2,
+        .dark h3,
+        .dark h4 {
+            color: var(--text-primary) !important;
+        }
+
+        .dark p {
+            color: var(--text-secondary) !important;
+        }
+
+        .dark li {
+            color: var(--text-secondary) !important;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #1B4D3E 0%, #52796F 100%);
+        }
+
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .theme-toggle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background-color: var(--forest);
+            border: 2px solid var(--forest);
+            color: white;
+        }
+
+        .theme-toggle:hover {
+            transform: scale(1.1);
+            background-color: var(--sage);
+            color: white;
+            border-color: var(--sage);
+        }
+
+        .dark .theme-toggle {
+            background-color: #1e293b;
+            border-color: white;
+            color: white;
+        }
+
+        .dark .theme-toggle:hover {
+            background-color: var(--sage);
+            border-color: var(--sage);
+        }
+    </style>
+</head>
+
+<body class="bg-cream font-inter text-charcoal">
+
+    <!-- Header -->
+    <nav class="bg-white/10 backdrop-blur-sm border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="font-tiempos text-2xl font-bold text-forest">
+                    <a href="https://tradecontrol.in" target="_blank" class="hover:underline">tradeControl.in</a>
+                </div>
+                <div class="flex items-center space-x-6">
+                    <a href="https://www.tradecontrol.in/retirement-planner" target="_blank"
+                        class="text-sage hover:text-forest font-medium">Try Tool</a>
+                    <a href="https://www.tradecontrol.in/retirement-tool-guide" target="_blank"
+                        class="text-sage hover:text-forest font-medium">Guide</a>
+                    <button id="themeToggle" class="theme-toggle" title="Toggle dark mode">
+                        <svg class="sun-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z">
+                            </path>
+                        </svg>
+                        <svg class="moon-icon w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z">
+                            </path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-20">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="font-tiempos text-5xl md:text-6xl font-bold mb-6">Master Your Retirement:<br>The Complete Guide
+                to Financial Freedom</h1>
+            <p class="text-xl md:text-2xl mb-8 text-gray-100">Stop worrying about your future. Start planning with
+                confidence.</p>
+            <a href="https://www.tradecontrol.in/retirement-planner" target="_blank"
+                class="inline-block px-8 py-4 bg-white text-forest rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg">Start
+                Planning Now →</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <article class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <!-- The Problem -->
+        <section class="mb-16">
+            <h2 class="font-tiempos text-4xl font-bold text-forest mb-6">The Retirement Crisis Nobody Talks About</h2>
+            <div class="prose prose-lg max-w-none">
+                <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                    Did you know that <strong>78% of working professionals</strong> have no clear retirement plan? Even
+                    more alarming, <strong>64% don't know</strong> how much money they'll need to retire comfortably.
+                </p>
+                <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                    The traditional approach to retirement planning is broken. Most people:
+                </p>
+                <ul class="space-y-3 text-gray-700 mb-6">
+                    <li class="flex items-start">
+                        <span class="text-coral mr-3">✗</span>
+                        <span>Rely on vague rules of thumb (like the 4% rule) that don't account for their unique
+                            situation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-coral mr-3">✗</span>
+                        <span>Underestimate the impact of inflation on their purchasing power</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-coral mr-3">✗</span>
+                        <span>Don't have a clear strategy for asset allocation and withdrawal</span>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-coral mr-3">✗</span>
+                        <span>Fail to account for major life expenses and emergencies</span>
+                    </li>
+                </ul>
+                <p class="text-lg text-gray-700 leading-relaxed">
+                    The result? Anxiety, uncertainty, and often, a retirement that falls short of expectations.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Solution -->
+        <section class="mb-16 bg-light-sage rounded-2xl p-8">
+            <h2 class="font-tiempos text-4xl font-bold text-forest mb-6">There's a Better Way</h2>
+            <p class="text-xl text-gray-700 leading-relaxed mb-6">
+                Imagine knowing <strong>exactly</strong> when you can retire, how much you'll have, and whether you're
+                on track to meet your goals. That's the power of systematic retirement planning.
+            </p>
+            <p class="text-lg text-gray-700 leading-relaxed">
+                Our Retirement Planning Tool takes the guesswork out of retirement by providing:
+            </p>
+            <ul class="space-y-3 text-gray-700 mt-6">
+                <li class="flex items-start">
+                    <span class="text-sage mr-3 text-2xl">✓</span>
+                    <span><strong>Year-by-year projections</strong> of your financial future</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-sage mr-3 text-2xl">✓</span>
+                    <span><strong>Financial Freedom Age</strong> calculation - when you can truly retire</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-sage mr-3 text-2xl">✓</span>
+                    <span><strong>Customizable strategies</strong> for asset allocation and withdrawals</span>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-sage mr-3 text-2xl">✓</span>
+                    <span><strong>Inflation-adjusted</strong> calculations for realistic planning</span>
+                </li>
+            </ul>
+        </section>
+
+        <!-- Key Concepts -->
+        <section class="mb-16">
+            <h2 class="font-tiempos text-4xl font-bold text-forest mb-8">Understanding the Fundamentals</h2>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="font-tiempos text-2xl font-bold text-forest mb-4">The Power of Compound Interest</h3>
+                    <p class="text-gray-700 mb-4">
+                        Einstein called it the "eighth wonder of the world." When you invest early, your money doesn't
+                        just grow—it grows exponentially.
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Example: ₹10,000 invested monthly at 12% annual returns becomes ₹3.5 crores in 25 years.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="font-tiempos text-2xl font-bold text-forest mb-4">Inflation: The Silent Wealth Killer
+                    </h3>
+                    <p class="text-gray-700 mb-4">
+                        At 8% annual inflation, your money loses half its purchasing power in just 9 years. Planning
+                        without considering inflation is planning to fail.
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Our tool automatically adjusts all projections for inflation.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="font-tiempos text-2xl font-bold text-forest mb-4">Asset Allocation Strategy</h3>
+                    <p class="text-gray-700 mb-4">
+                        Diversification isn't just about spreading risk—it's about optimizing returns across different
+                        asset classes based on your age and goals.
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Define custom allocation strategies for both accumulation and withdrawal phases.
+                    </p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md card-hover">
+                    <h3 class="font-tiempos text-2xl font-bold text-forest mb-4">The 4% Rule (and Why It's Not Enough)
+                    </h3>
+                    <p class="text-gray-700 mb-4">
+                        The traditional 4% withdrawal rule assumes average market returns and doesn't account for your
+                        specific situation, expenses, or legacy goals.
+                    </p>
+                    <p class="text-sm text-gray-600">
+                        Our tool creates a personalized withdrawal strategy based on YOUR assets and goals.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Plan -->
+        <section class="mb-16">
+            <h2 class="font-tiempos text-4xl font-bold text-forest mb-8">Your 5-Step Retirement Planning Process</h2>
+
+            <div class="space-y-6">
+                <div class="flex items-start">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-sage text-white rounded-full flex items-center justify-center font-bold text-xl mr-6">
+                        1</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-forest mb-2">Calculate Your Retirement Number</h3>
+                        <p class="text-gray-700">
+                            Determine how much you need based on your desired lifestyle, expected expenses, and life
+                            expectancy. Don't forget to factor in inflation and medical emergencies.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-sage text-white rounded-full flex items-center justify-center font-bold text-xl mr-6">
+                        2</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-forest mb-2">Assess Your Current Position</h3>
+                        <p class="text-gray-700">
+                            Take stock of all your assets: investments, properties, savings, and expected income
+                            streams. Be comprehensive and honest.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-sage text-white rounded-full flex items-center justify-center font-bold text-xl mr-6">
+                        3</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-forest mb-2">Define Your Strategy</h3>
+                        <p class="text-gray-700">
+                            Create a clear plan for how you'll allocate surplus income during your working years and how
+                            you'll withdraw funds in retirement.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-sage text-white rounded-full flex items-center justify-center font-bold text-xl mr-6">
+                        4</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-forest mb-2">Run the Numbers</h3>
+                        <p class="text-gray-700">
+                            Use our tool to project your financial future year by year. See exactly when you can retire
+                            and what your corpus will look like.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex items-start">
+                    <div
+                        class="flex-shrink-0 w-12 h-12 bg-sage text-white rounded-full flex items-center justify-center font-bold text-xl mr-6">
+                        5</div>
+                    <div>
+                        <h3 class="text-2xl font-bold text-forest mb-2">Adjust and Optimize</h3>
+                        <p class="text-gray-700">
+                            Experiment with different scenarios. What if you retire earlier? What if you increase your
+                            savings rate? Find the optimal path to your goals.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tool Introduction -->
+        <section id="tool" class="mb-16 bg-gradient-to-r from-forest to-sage text-white rounded-2xl p-12">
+            <h2 class="font-tiempos text-4xl font-bold mb-6">Introducing the Retirement Planning Tool</h2>
+            <p class="text-xl mb-8 leading-relaxed">
+                Stop guessing. Start knowing. Our comprehensive retirement calculator gives you complete visibility into
+                your financial future.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6 mb-8">
+                <div>
+                    <div class="text-4xl font-bold mb-2">100%</div>
+                    <div class="text-gray-100">Free to use</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">∞</div>
+                    <div class="text-gray-100">Unlimited scenarios</div>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold mb-2">📊</div>
+                    <div class="text-gray-100">Detailed projections</div>
+                </div>
+            </div>
+
+            <a href="https://www.tradecontrol.in/retirement-planner" target="_blank"
+                class="inline-block px-8 py-4 bg-white text-forest rounded-lg hover:bg-gray-100 transition-colors font-semibold text-lg">
+                Start Planning Your Retirement →
+            </a>
+        </section>
+
+        <!-- Success Stories -->
+        <section class="mb-16">
+            <h2 class="font-tiempos text-4xl font-bold text-forest mb-8">Real Planning Scenarios</h2>
+
+            <div class="space-y-8">
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-forest mb-4">Scenario 1: The Early Retiree</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-gray-700 mb-4"><strong>Profile:</strong> 35-year-old professional, ₹75,000
+                                monthly income, ₹45,000 expenses</p>
+                            <p class="text-gray-700 mb-4"><strong>Goal:</strong> Retire by 50 with ₹5 crore inheritance
+                                goal</p>
+                        </div>
+                        <div class="bg-light-sage p-4 rounded-lg">
+                            <p class="text-gray-700 mb-2"><strong>Result:</strong></p>
+                            <p class="text-gray-700">✓ Can retire at age 52</p>
+                            <p class="text-gray-700">✓ Final corpus: ₹8.2 crores</p>
+                            <p class="text-gray-700">✓ Exceeds inheritance goal</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <h3 class="text-2xl font-bold text-forest mb-4">Scenario 2: The Conservative Planner</h3>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <p class="text-gray-700 mb-4"><strong>Profile:</strong> 40-year-old with moderate income,
+                                significant property assets</p>
+                            <p class="text-gray-700 mb-4"><strong>Goal:</strong> Comfortable retirement at 60 with
+                                steady income</p>
+                        </div>
+                        <div class="bg-light-sage p-4 rounded-lg">
+                            <p class="text-gray-700 mb-2"><strong>Result:</strong></p>
+                            <p class="text-gray-700">✓ Retirement at 60 achievable</p>
+                            <p class="text-gray-700">✓ ₹45,000 monthly passive income</p>
+                            <p class="text-gray-700">✓ Corpus lasts till age 85+</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="text-center py-16 bg-light-sage rounded-2xl">
+            <h2 class="font-tiempos text-4xl font-bold text-forest mb-6">Ready to Take Control of Your Future?</h2>
+            <p class="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+                Join thousands of smart planners who've already mapped out their path to financial freedom.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://www.tradecontrol.in/retirement-planner" target="_blank"
+                    class="inline-block px-8 py-4 bg-sage text-white rounded-lg hover:bg-forest transition-colors font-semibold text-lg">
+                    Start Your Plan Now
+                </a>
+                <a href="https://www.tradecontrol.in/retirement-tool-guide" target="_blank"
+                    class="inline-block px-8 py-4 border-2 border-sage text-sage rounded-lg hover:bg-sage hover:text-white transition-colors font-semibold text-lg">
+                    Read the Guide
+                </a>
+            </div>
+        </section>
+
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-charcoal text-white py-12 mt-20">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="font-tiempos text-2xl font-bold mb-4">tradeControl.in</div>
+            <p class="text-gray-400 mb-6">Empowering your financial future</p>
+            <div class="flex justify-center space-x-6">
+                <a href="https://www.tradecontrol.in/retirement-planner" target="_blank"
+                    class="text-gray-400 hover:text-white">Tool</a>
+                <a href="https://www.tradecontrol.in/retirement-tool-guide" target="_blank"
+                    class="text-gray-400 hover:text-white">Guide</a>
+                <a href="https://tradecontrol.in" target="_blank" class="text-gray-400 hover:text-white">Home</a>
+            </div>
+            <p class="text-gray-500 text-sm mt-8">© 2024 tradeControl.in. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme Management
+        function initTheme() {
+            const savedTheme = localStorage.getItem('retirementToolTheme') || 'light';
+            if (savedTheme === 'dark') {
+                document.documentElement.classList.add('dark');
+                updateThemeIcons(true);
+            }
+        }
+
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.toggle('dark');
+            localStorage.setItem('retirementToolTheme', isDark ? 'dark' : 'light');
+            updateThemeIcons(isDark);
+        }
+
+        function updateThemeIcons(isDark) {
+            const sunIcon = document.querySelector('.sun-icon');
+            const moonIcon = document.querySelector('.moon-icon');
+            if (isDark) {
+                sunIcon?.classList.add('hidden');
+                moonIcon?.classList.remove('hidden');
+            } else {
+                sunIcon?.classList.remove('hidden');
+                moonIcon?.classList.add('hidden');
+            }
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            initTheme();
+            document.getElementById('themeToggle')?.addEventListener('click', toggleTheme);
+        });
+    </script>
+
+</body>
+
+</html>
